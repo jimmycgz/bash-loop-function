@@ -52,7 +52,7 @@ done < "$file"
 
 ### Example: get the unique values from a list
 #Copied from https://github.com/dylanaraps/pure-bash-bible
-
+```
 echo "usage: remove_array_dups 1 1 2 2 3 3 3 3 3 4 4 4 4 4 5 5 5 5 5 5"
 echo "result: 1 2 3 4 5"
 echo "Usage 2: arr=(red red green blue blue) && remove_array_dups \"\${arr[@]}\" "
@@ -65,11 +65,6 @@ remove_array_dups() {
     for i in "$@"; do
         [[ $i ]] && tmp_array["${i:- }"]='.'
         #[[ $i ]] && IFS=" " tmp_array["${i:- }"]=1		
-
-	echo "'i:-:' ${i:-}"
-    echo ".. tmp_array str =${tmp_array[@]}"
-	echo ".. ! tmp_array str =${!tmp_array[@]}"
-	echo " "
     done
 	
     printf '%s ' "${!tmp_array[@]}"
@@ -78,3 +73,4 @@ remove_array_dups() {
 echo "remove_array_dups z hh ff 66 6 66 5 5 5"
 remove_array_dups z hh ff 66 6 66 5 5 5
 
+```
